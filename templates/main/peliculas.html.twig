@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Peliculas!
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+	{% if is_granted("ROLE_ADMIN") %}
+		<h1>Hola Administrador! ✅</h1>
+	{% else %}
+		<h1>Hola {{ username }}! ✅</h1>
+	{% endif %}
+	<a href="/">Atrás</a>
+	{% if app.user %}
+		<a href="{{ path('app_logout') }}">Cerrar Sesión</a>
+	{% else %}
+		<a href="/login">Iniciar Sesión</a>
+	{% endif %}
+
+	
+</div>
+
+
+<h1>Series</h1>
+<form action="/peliculas/buscar" method="POST">
+<input type="text" name="txtBuscar"/>
+<input type="submit" class="form__input" name='buscar' value="Buscar"/>
+</form>
+<div class="art_container">
+{% for movie in movies %}
+	<div class="article">
+	<hr id="hr1">
+	<img src="/img/{{movie.image}}" alt="" width="300"></br> 
+	<h2>{{ movie.title }}</h2><p>{{ movie.year }}</p>
+	<h4>Comentarios:</h4>
+	{% if username != 'Visitante' %}
+			<form class="form_comment" method="POST" action="/peliculas/{{ movie.id }}">
+            <textarea class="comment_area" name="comment" placeholder="Escribe un comentario ..." pattern="[A-Za-zÁ-ÿ]{2-200}" required></textarea>
+            <div>
+            <input type="submit" class="form__input" value="COMENTAR">
+            </div><br>
+		{% endif %}
+		
+	{% if movie.comments %}
+		{% for comment in movie.comments %}
+			<b> {{ comment.user.username }} </b><p> {{ comment.comment }}</p>{% if rol == 'admin' %}<a href="/peliculas/movie{{movie.id}}/deleteCmm{{comment.id}}">Borrar Comentario</a><br>{% endif %}<br>
+			
+		{% endfor %}
+	{% endif %}
+			</form>
+			{% if rol == 'admin' %}
+			<a style= "text-align:center; margin:auto; color:red" href="/peliculas/deleteArt{{movie.id}}">Borrar Artículo</a>
+			{% endif %}
+		</div>
+			<hr id="hr2">
+	{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

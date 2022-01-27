@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Hello MainController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block body %}
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300 &display=swap');
+	</style>
+
+	<div class="example-wrapper">
+		{% if is_granted("ROLE_ADMIN") %}
+			<h1>Hola Administrador! ✅</h1>
+		{% else %}
+			<h1>Hola {{ username }}! ✅</h1>
+		{% endif %}
+	</div>
+	<a href="/peliculas">Ver Series</a>
+	{% if app.user == null %}
+		<a href="/login">Iniciar Sesión</a>
+	{% else %}
+		<a href="{{ path('app_logout') }}">Cerrar Sesión</a>
+		<div class="centrar">
+			<div class="flex-container">
+				<form class="form" method="POST" action="/">
+					<div class="form__section">
+						<h3 style="color:white">Añade un artículo (serie/película)</h3>
+						<input type="text" class="form__input" name="title" placeholder="Título" required pattern="[A-Za-z]{2-50}">
+						<input type="url" class="form__input" name="img" placeholder="Enlace de imagen" required>
+
+						<input type="number" class="form__input" name="year" min="1700" max="2021" required>
+
+						<input type="submit" class="form__input">
+					</div>
+				</form>
+			</div>
+		</div>
+	{% endif %}
+
+
+{% endblock %}

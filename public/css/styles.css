@@ -1,0 +1,261 @@
+* {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  html {
+    background-color: rgb(235, 235, 235);
+  }
+
+  .example-wrapper {
+		margin: 1em auto;
+		max-width: 800px;
+		width: 95%;
+	}
+	.example-wrapper code {
+		background: #F5F5F5;
+		padding: 2px 6px;
+	}
+
+
+
+
+
+
+
+  .flex-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background: #444;
+    width: 50%;
+    padding: 20px;
+  }
+  
+  .centrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .form {
+    width: 100%;
+    text-align: center;
+    padding: 35px;
+  }
+  
+  /* .form_section{
+    width: 100%;
+  } */
+  
+  .form_comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: start;
+    width: 100%;
+    text-align: start;
+    padding: 0%;
+  }
+  
+  .form_comment p {
+    margin-bottom: 2em;
+  }
+  
+  .comment_area {
+    width: 95%;
+    height: 3em;
+    border: none;
+    border-bottom: 3px solid #5f9;
+    background-color: rgb(235, 235, 235);
+  }
+  
+  .comment_area:focus {
+    outline: none;
+  }
+  
+  .form__input {
+    width: 90%;
+    padding: 7px;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 3px solid #1c7;
+    background: transparent;
+    color: white;
+  }
+  
+  .form__input:focus {
+    background: linear-gradient(to bottom, transparent, #222);
+    outline: none;
+    border-bottom: 3px solid #5f9;
+  }
+  
+  .form textarea {
+    min-height: 140px;
+    resize: none;
+  }
+  
+  .form input[type="submit"] {
+    background-color: #1c7;
+    border-bottom: none;
+    width: 45%;
+  }
+  
+  .form input[type="submit"]:hover {
+    background-color: rgb(10, 185, 107);
+  }
+  
+  .form input[type="submit"]:focus {
+    background: linear-gradient(to bottom, rgb(10, 185, 107), rgb(9, 151, 87));
+  }
+  
+  form input[type="submit"] {
+    background-color: #1c7;
+    border-bottom: none;
+    width: 100%;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: rgb(10, 185, 107);
+  }
+  
+  form input[type="submit"]:focus {
+    background: linear-gradient(to bottom, rgb(10, 185, 107), rgb(9, 151, 87));
+  }
+  
+  .form a {
+    background-color: #1c7;
+    border-bottom: none;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+  .form__inputA {
+    width: 100%;
+    padding: 7px;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 3px solid #1c7;
+    background: transparent;
+    color: white;
+  }
+  
+  .form__inputB {
+    width: 100%;
+    margin: 0.3em auto 0 auto;
+    border: none;
+    color: white;
+    background: transparent;
+  }
+  
+  .form__inputB a {
+    display: inline-block;
+    overflow: hidden;
+    padding: 7px;
+    width: 20%;
+    font-size: 0.75em;
+    color: white;
+    background-color: rgb(10, 185, 107);
+  }
+  
+  .form a:focus {
+    background: linear-gradient(to bottom, rgb(10, 185, 107), rgb(9, 151, 87));
+  }
+  .form a:hover {
+    background-color: rgb(10, 185, 107);
+  }
+  
+
+
+
+
+  .form button[type="submit"] {
+    background-color: #1c7;
+    border-bottom: none;
+    width: 45%;
+  }
+  
+  .form button[type="submit"]:hover {
+    background-color: rgb(10, 185, 107);
+  }
+  
+  .form button[type="submit"]:focus {
+    background: linear-gradient(to bottom, rgb(10, 185, 107), rgb(9, 151, 87));
+  }
+  
+  form input[type="submit"] {
+    background-color: #1c7;
+    border-bottom: none;
+    width: 100%;
+  }
+
+
+
+
+
+  .art_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 1.5em;
+    text-align: justify;
+  }
+  
+  .article {
+    width: 26%;
+    padding: 10px;
+  }
+
+
+
+  .article img {
+    width: 100%;
+  }
+  
+  .article p {
+    width: 100%;
+  }
+  
+  .comments {
+    width: 100%;
+  }
+  
+  #hr1 {
+    height: 0.5px;
+    width: 85%;
+    border-color: rgba(255, 255, 255, 0);
+    background-color: #1c7;
+  }
+  
+  .article:nth-child(-n+5) #hr1{
+    display: none;
+  }
+
+  #hr2:nth-child(6n){
+    display: none;
+  }
+
+  #hr2:last-child{
+    display: none;
+  }
+
+  #hr2 {
+    width: 0.05px;
+    border-color: rgba(255, 255, 255, 0);
+    background-color: #1c7;
+  }
+
+
+
+
+  /*{% if movie.id > 3 %}
+			<hr id="hr1">
+		{% endif %}*/
+
+    /*{% if movie.id % 3 != 0 %}
+			<hr id="hr2">
+		{% endif %}*/
